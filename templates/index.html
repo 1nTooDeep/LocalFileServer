@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename = 'css/index.css') }}">
+    <title>局域网网盘</title>
+</head>
+<style>
+    div{
+        border-radius: 5px ;
+    }
+</style>
+<body style="margin-left:0 ;margin-right:0">
+    <div class="body">
+        <h2 >局域网网盘</h2>
+        <h4 >点击文件即可下载</h4>
+        <table class="table">
+            <tr id="head">
+                <td class="td-name">文件名</td>
+                <td class="td-size">大小</td>
+                <td class="td-ctime">创建日期</td>
+            </tr>
+            {% for file in files %}
+            <tr class="file">
+                <td class="td-name"><a href="/download/{{file.name}}">{{file.name}}</a></td>
+                <td class="td-size">{{file.size}} </td>
+                <td class="td-ctime" style="width: 200px;">{{file.ctime}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

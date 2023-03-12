@@ -1,0 +1,36 @@
+.body{
+    text-align: none;
+    
+}
+.table{
+    border: 5px solid #b0a5a5b5;
+    border-collapse:separate;
+    border-spacing: 5px;
+    width: 70%;
+    margin-left: 15%;
+}
+.file{
+    border: 2px solid #b0a5a5b5;
+    margin-top: 5px;
+    text-align: center;
+}
+#head{
+    background-color: antiquewhite;
+    text-align: center;
+}
+.file:hover{
+    background: #f2c8c8;
+    color: rgb(83, 81, 79);
+}
+.file a{
+    color: rgb(41, 60, 60);
+    text-decoration: none;
+}
+h2{
+    display: block;
+    text-align: center;
+}
+h4{
+    display: block;
+    text-align: center;
+}
