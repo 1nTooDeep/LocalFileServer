@@ -39,7 +39,9 @@ if __name__ == '__main__':
     cors = CORS(app, resources=r'/*')
     from login import login
     from download import download
-
+    from upload import bp as upload
     app.register_blueprint(login,url_prefix='/login')
     app.register_blueprint(download,url_prefix='/download')
-    app.run(port="5000", debug=True,host="0.0.0.0")
+    app.register_blueprint(upload,url_prefix='/upload')
+    app.run(port="5000", debug=True,host="::")
+    

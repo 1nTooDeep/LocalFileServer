@@ -16,7 +16,7 @@
     <div class="body">
         <h2 >局域网网盘</h2>
         <h4 >点击文件即可下载</h4>
-        <form action="/" method="post" enctype="multipart/form-data" class="upload">
+        <form action="/upload/file" method="post" enctype="multipart/form-data" class="upload">
             <div id="upload"><input type="file" multiple="multiple" accept="*" name="file"></div>
             <div id="upload"><input type="submit" value="上传"></div>
         </form>
@@ -28,12 +28,49 @@
             </tr>
             {% for file in files %}
             <tr class="file">
-                <td class="td-name"><a href="/download/{{file.name}}">{{file.name}}</a></td>
+                <td class="td-name"><a href="/download/{{file.name}}" >{{file.name}}</a></td>
                 <td class="td-size">{{file.size}} </td>
                 <td class="td-ctime" style="width: 200px;">{{file.ctime}}</td>
             </tr>
             {% endfor %}
         </table>
     </div>
+
+<script>
+    window.history.replaceState(null, null, window.location.href);
+
+    const schedule = document.querySelector(".schedule");
+    function download() {
+      const xhr = new XMLHttpRequest();
+      const downloadUrl = document.getElementById(event)
+      xhr.open('GET', downloadUrl, true);
+      xhr.addEventListener('progress', function (event) {
+        if (event.lengthComputable) {
+        // lengthComputable判断所关联的资源是否具有可以计算的长度。否则 ，ProgressEvent.total 属性将是一个无意义的值。
+          let percentComplete = event.loaded / event.total; // 计算下载进度（比例）
+          schedule.innerText = percentComplete;
+        }
+      }, false);
+      xhr.send();
+    }
+    var test = document.getElementsByTagName('a');
+    for (var i = 0; i < test.length; i++) {
+      test[i].onclick = function() {
+        const xhr = new XMLHttpRequest();
+        const downloadUrl = this.href
+        xhr.open('GET', downloadUrl, true);
+        xhr.addEventListener('progress', function (event) {
+            if (event.lengthComputable) {
+            // lengthComputable判断所关联的资源是否具有可以计算的长度。否则 ，ProgressEvent.total 属性将是一个无意义的值。
+            let percentComplete = event.loaded / event.total; // 计算下载进度（比例）
+            schedule.innerText = percentComplete;
+            }
+        }, false);
+        xhr.send();
+        
+      }
+    }
+
+</script>
 </body>
 </html>
