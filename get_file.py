@@ -1,7 +1,7 @@
 import os
 import time
 DIRECTORY_PATH = r"G:"
-DIRECTORY_PATH = "G:\\"
+DIRECTORY_PATH = "/home/weii/Workfile/python/LocalFileServer"
 
 def get_files_data():
     files = []

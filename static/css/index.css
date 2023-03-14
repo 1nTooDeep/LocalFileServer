@@ -34,3 +34,12 @@ h4{
     display: block;
     text-align: center;
 }
+.upload{
+    display: block;
+    margin-left: 45%;
+
+    
+}
+#upload{
+    margin-top: 20px;
+}
