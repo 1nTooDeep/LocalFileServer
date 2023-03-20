@@ -8,17 +8,15 @@
     <title>局域网网盘</title>
 </head>
 <style>
-    div{
-        border-radius: 5px ;
-    }
+    
 </style>
 <body style="margin-left:0 ;margin-right:0">
     <div class="body">
         <h2 >局域网网盘</h2>
         <h4 >点击文件即可下载</h4>
         <form action="/upload/file" method="post" enctype="multipart/form-data" class="upload">
-            <div id="upload"><input type="file" multiple="multiple" accept="*" name="file"></div>
-            <div id="upload"><input type="submit" value="上传"></div>
+            <div id="upload"><input type="file" multiple="multiple" accept="*" name="file"><input type="submit" value="上传"></div>
+            <div id="upload"></div>
         </form>
         <table class="table">
             <tr id="head">
@@ -28,7 +26,7 @@
             </tr>
             {% for file in files %}
             <tr class="file">
-                <td class="td-name"><a href="/download/{{file.name}}" >{{file.name}}</a></td>
+                <td class="td-name" ><a href="/download/{{file.name}}" >{{file.name}}</a></td>
                 <td class="td-size">{{file.size}} </td>
                 <td class="td-ctime" style="width: 200px;">{{file.ctime}}</td>
             </tr>

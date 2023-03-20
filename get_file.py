@@ -13,14 +13,14 @@ def get_files_data():
             files.append({
                 'name':i,
                 'type':'dir',
-                'time':f"{t_i.tm_year}/{t_i.tm_mon}/{t_i.tm_mday} \
+                'ctime':f"{t_i.tm_year}/{t_i.tm_mon}/{t_i.tm_mday} \
 {t_i.tm_hour}:{t_i.tm_min if t_i.tm_min>10 else f'0{t_i.tm_min}'}:{t_i.tm_sec}"})
             continue
         else:
             t_i=time.localtime(os.path.getctime(DIRECTORY_PATH+f'/{i}'))
             files.append({'name':i,'type':'file',
                             'size':os.path.getsize(DIRECTORY_PATH+f'/{i}'),
-                            'time':f"{t_i.tm_year}/{t_i.tm_mon}/{t_i.tm_mday} \
+                            'ctime':f"{t_i.tm_year}/{t_i.tm_mon}/{t_i.tm_mday} \
 {t_i.tm_hour}:{t_i.tm_min if t_i.tm_min>10 else f'0{t_i.tm_min}'}:{t_i.tm_sec}"
             })
     files.sort(key=lambda x:x['type'])

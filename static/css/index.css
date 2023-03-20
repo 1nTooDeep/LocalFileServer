@@ -1,14 +1,28 @@
-.body{
-    text-align: none;
-    
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+.body {
+    height: 100%;
+    background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
 }
 .table{
-    border: 5px solid #b0a5a5b5;
+    border: 2px solid #99bcc5b5 ;
     border-collapse:separate;
-    border-spacing: 5px;
-    width: 70%;
-    margin-left: 15%;
+    border-spacing: 0px;
+    width: 80%;
+    margin-left: auto;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, #e2d4de, #a5aebf);
+    margin: 0 auto;
 }
+
 .file{
     border: 2px solid #b0a5a5b5;
     margin-top: 5px;
@@ -25,6 +39,8 @@
 .file a{
     color: rgb(41, 60, 60);
     text-decoration: none;
+    border-collapse:separate;
+    border-spacing:10px 10px;
 }
 h2{
     display: block;
@@ -36,7 +52,7 @@ h4{
 }
 .upload{
     display: block;
-    margin-left: 45%;
+    margin-left: 35%;
 
     
 }

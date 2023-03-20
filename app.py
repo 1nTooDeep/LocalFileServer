@@ -15,6 +15,8 @@ log = logging.Logger('flasklog')
 app.logger.addHandler(log)
 
 
+   
+
 @app.route("/",methods=['POST','GET'])
 def index():
     # if session.get('user') == None:
@@ -43,5 +45,5 @@ if __name__ == '__main__':
     app.register_blueprint(login,url_prefix='/login')
     app.register_blueprint(download,url_prefix='/download')
     app.register_blueprint(upload,url_prefix='/upload')
-    app.run(port="5000", debug=True,host="::")
+    app.run(port="5000", debug=True,host="0.0.0.0")
     

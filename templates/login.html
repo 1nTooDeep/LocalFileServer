@@ -56,6 +56,8 @@
             margin-top: 40px;
             background-image: linear-gradient(to right, #afc6ec, #fbc2eb);
             color: #fff;
+            border: #9c9898 solid 2px;
+            border-radius: 3px;
         }
         .msg {
             text-align: center;
@@ -76,7 +78,7 @@
         <div class="login-wrapper">
             <div class="header">Login</div>
             <div class="form-wrapper">
-                <form  method="POST">
+                <form  method="POST" action="/login/check">
                 <input type="text" name="user" placeholder="username" class="input-item">
                 <input type="password" name="password" placeholder="password" class="input-item">
                 <input type="submit" class="btn" >
